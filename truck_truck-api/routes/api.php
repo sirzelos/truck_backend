@@ -20,6 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/user','UserController@user')->middleware('auth:api');
 
+Route::post('/register','UserController@register');
+
 Route::get('employees','EmployeeController@getEmployee');
 
 Route::get('employee/{id}','EmployeeController@getEmployeeById');

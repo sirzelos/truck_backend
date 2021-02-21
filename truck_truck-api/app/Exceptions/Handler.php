@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Dotenv\Exception\ValidationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -51,6 +52,11 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         // return parent::render($request, $exception);
+
+        if($exception instanceof ValidationException){
+            return response(['errors'=>$exception->error_log],400);
+        }
         return response(['error'=>$exception->getMessage()],$exception->getCode()?:400);
+
     }
 }
