@@ -15,7 +15,6 @@ class UserController extends Controller
     }
 
     public function register(Request $request){
-
        User::create(
         [
             'name'=>$request->name,
@@ -25,5 +24,7 @@ class UserController extends Controller
         ]
        );
     }
+
+    
 
 }
