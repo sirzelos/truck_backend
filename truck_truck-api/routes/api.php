@@ -28,6 +28,19 @@ Route::get('employee/{id}','EmployeeController@getEmployeeById');
 
 Route::post('addEmployee','EmployeeController@addEmployee');
 
+Route::get('shippingCompany','UserController@getShippingCompany');
+
+Route::get('user/{id}','UserController@getUserByID');
+
+
+Route::post('addDetailShippingCompany','UserController@addDetailShippingCompany');
+
+Route::get('getDetailShippingCompany/{id}','UserController@getDetailShippingCompany');
+
 Route::put('updateEmployee/{id}','EmployeeController@updateEmployee');
 
 Route::delete('deleteEmployee/{id}', 'EmployeeController@deleteEmployee');
+
+//order
+Route::post('createOrder','OrdersController@store');
+Route::get('myorder/{id}','OrdersController@show');
