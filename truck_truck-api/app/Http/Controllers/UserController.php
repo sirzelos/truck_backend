@@ -17,7 +17,9 @@ class UserController extends Controller
     }
 
     public function getUserByID($id){
-        $result =DB::table('users')->where('id',$id)->first();
+        $result =DB::table('users')
+        ->where('id',$id) 
+        ->first();
         return response()->json( $result,200);
     }
 
@@ -66,6 +68,7 @@ class UserController extends Controller
         'weight_to_kk'=>$request->weight_to_kk,
         'product_type' => $request->product_type,
         'approximate_price'=>$min .'-'.$max,
+        'tel'=>$request->tel
     ]);
     }
     else{ 
@@ -89,6 +92,7 @@ class UserController extends Controller
             'weight_to_kk'=>$request->weight_to_kk,
             'product_type' => $request->product_type,
             'approximate_price'=>$min .'-'.$max,
+            'tel'=>$request->tel
         ]);
     }
    

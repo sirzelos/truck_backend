@@ -13,6 +13,7 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
+
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string("name_recipient");
@@ -29,14 +30,16 @@ class CreateOrdersTable extends Migration
             $table->string("province_giver");
             $table->string("postCode_giver");
             $table->string("tel_giver");
-            $table->dateTime('pick_up_date');
-            $table->dateTime('delivery_date');
+            $table->string('pick_up_date');
+            $table->string('delivery_date');
             $table->string("product_type");
             $table->integer("weight_product");
             $table->integer('cost');
             $table->integer('status');
             $table->longText('created_at');
             $table->longText('updated_at');
+            $table->dateTime('update_at');
+            $table->longText('signaturepad')->nullable();
         });
     }
 

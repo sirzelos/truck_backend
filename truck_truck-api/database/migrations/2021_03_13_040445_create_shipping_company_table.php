@@ -16,6 +16,7 @@ class CreateShippingCompanyTable extends Migration
         Schema::create('shippingCompany', function (Blueprint $table) {
             $table->id();
             $table->integer("oil_cost");
+            $table->string("tel");
             $table->integer("mini_weight");
             $table->integer("north_mini_weight_cost");
             $table->integer("bangkok_mini_weight_cost");

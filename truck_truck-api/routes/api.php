@@ -44,3 +44,6 @@ Route::delete('deleteEmployee/{id}', 'EmployeeController@deleteEmployee');
 //order
 Route::post('createOrder','OrdersController@store');
 Route::get('myorder/{id}','OrdersController@show');
+Route::get('order/show/{id}','OrdersController@showByID');
+Route::get('myorder/update/{id}/{status}','OrdersController@update');
+Route::post('saveSignaturepad/{id}','OrdersController@saveSignaturepad');
